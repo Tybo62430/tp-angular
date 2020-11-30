@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>student</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle *ngIf="student.isProjectDone ; else elseBlock">Projet Terminé</ion-card-subtitle>
+      <ng-template #elseBlock>
+        <ion-card-subtitle>Projet non Terminé</ion-card-subtitle>
+      </ng-template>
+      
+      <ion-card-title>{{student.name}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content> {{student.comment}} </ion-card-content>
+  </ion-card>
+  <ion-button routerLink=''>Retour</ion-button>
+</ion-content>
